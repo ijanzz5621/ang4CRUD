@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { UserService } from './../user.service';
+import { User } from './../user';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-user-new',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserNewComponent implements OnInit {
 
-  constructor() { }
+  newUser = new User();
+
+  @Output() createNewUserEvent = new EventEmitter();
+
+  constructor(private _userService: UserService) { }
 
   ngOnInit() {
+  }
+
+  create() {
+    // this.user = new User;
+    // console.log(this.newUser);
+    // this._userService.create(this.newUser);
+    this.createNewUserEvent.emit(this.newUser);
+    this.newUser = new User();
   }
 
 }

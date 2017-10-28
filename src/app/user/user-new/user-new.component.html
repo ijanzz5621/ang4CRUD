@@ -1,3 +1,10 @@
-<p>
-  user-new works!
-</p>
+<h3>New User</h3>
+
+<form (submit)='create()'>
+  <input type="text" name="first_name" [(ngModel)]="newUser.first_name">
+  <input type="text" name="last_name" [(ngModel)]="newUser.last_name">
+  <input type="text" name="email" [(ngModel)]="newUser.email">
+
+  <input type="submit">
+
+</form>

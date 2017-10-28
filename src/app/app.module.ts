@@ -1,7 +1,9 @@
+import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
-//service
+// service
 import { UserService } from './user/user.service';
 
 import { AppComponent } from './app.component';
@@ -22,6 +24,8 @@ import { UserEditComponent } from './user/user-edit/user-edit.component';
   ],
   imports: [
     BrowserModule
+    , HttpModule
+    , FormsModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]
